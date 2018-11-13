@@ -1,0 +1,72 @@
+<!--{template common/header}-->
+<!--顶部导航-->
+
+<link rel="stylesheet" href="template/u179_u179waplt/touch/JS/mobile/JSNV/ui-base.css">
+<link rel="stylesheet" href="template/u179_u179waplt/touch/JS/mobile/JSNV/ui-dis.css">
+<link rel="stylesheet" href="template/u179_u179waplt/touch/JS/mobile/JSNV/style.css">
+
+
+
+	<div data-role="header" class="dis_nav_bar">
+		<div class="ui-navbar">
+			<ul class="ui-grid-c" style="width: 96%; left: 2%; padding: .3em 0 .4em;">
+				<li class="ui-block-a ">
+					<label class="ui-btn ui-btn-corner-all dis_nav_select dis_btn_left" ontouchstart="zy_touch(&#39;&#39;, function(){mymenus2(1);});" onmousedown="zy_touch(&#39;&#39;, function(){mymenus2(1);});">
+						<span class="ui-btn-inner">
+							<span class="ui-btn-text ui-big"><a href="home.php?mod=space&do=album&view=all" style="color:#FFF;">随便看看</a></span>
+						</span>
+					</label>
+				</li>
+				<li class="ui-block-b">
+					<label class="ui-btn ui-btn-corner-all dis_nav_select dis_btn_center" ontouchstart="zy_touch(&#39;&#39;, function(){mymenus2(2);});" onmousedown="zy_touch(&#39;&#39;, function(){mymenus2(2);});">
+						<span class="ui-btn-inner">
+							<span class="ui-btn-text ui-big"><a href="home.php?mod=space&do=album&view=we" style="color:#FFF;">好友相册</a></span>
+						</span>
+					</label>
+				</li>
+				<li class="ui-block-c">
+					<label class="ui-btn ui-btn-corner-all dis_nav_select dis_btn_center" ontouchstart="zy_touch(&#39;&#39;, function(){mymenus2(3);});" onmousedown="zy_touch(&#39;&#39;, function(){mymenus2(3);});">
+						<span class="ui-btn-inner">
+							<span class="ui-btn-text ui-big"><a href="home.php?mod=space&do=album&view=me" style="color:#FFF;">我的相册</a></span>
+						</span>
+					</label>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+<!--顶部导航-->
+
+        
+						<!--{if $count}-->
+
+						<div class="album">
+                        <ul>
+                        
+ 							<!--{loop $list $key $value}-->
+							<!--{eval $pwdkey = 'view_pwd_album_'.$value['albumid'];}-->
+							<li>
+								<a href="home.php?mod=space&uid=$value[uid]&do=album&id=$value[albumid]"><!--{if $value[pic]}--><img src="$value[pic]" alt="$value[albumname]" /><!--{/if}--></a>
+								<p><!--{if $value[albumname]}-->{echo cutstr(strip_tags($value[albumname]),10)}<!--{else}-->{lang default_album}<!--{/if}--></p>			
+							</li>
+							<!--{/loop}-->                            
+							<!--{if $space[self] && $_GET['view']=='me'}-->                            
+							<li>
+								<a href="home.php?mod=space&uid=$value[uid]&do=album&id=-1"><img src="{IMGDIR}/nophoto.gif" alt="{lang default_album}" width="91" height="91" /></a>
+								<p>{lang default_album}</p>
+							</li>
+							<!--{/if}-->                            
+                          </ul>  
+						</div>
+
+						<!--{if $multi}--><div class="pgbox">$multi</div><!--{/if}-->                            
+                            
+						<!--{/if}-->                   
+
+
+
+
+</div>
+
+<!--{template common/footer}-->

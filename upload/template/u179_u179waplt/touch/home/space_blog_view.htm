@@ -1,0 +1,42 @@
+<!--{template common/header}-->  
+<header class="header">
+
+	<div class="nav">
+
+			<a href="home.php?mod=space&do=blog&view=all&mobile=2" class="u179_menu_icon"><img style="margin:0;" width="40" height="40" src="./template/u179_u179waplt/img/images/u179_back.png" /> </a>
+
+	</div>
+
+</header>
+
+        <div>
+        <h1 class="vt_th">$blog[subject]</h1>
+        <div class="xg1 user_first"> 
+      
+      <!--{if $blog[viewnum]}-->$blog[viewnum] {lang blog_read} <span class="pipe">|</span><!--{/if}--> 
+      $blog[replynum] {lang blog_replay} <span class="pipe">|</span> 
+      <!--{date($blog[dateline])}--> 
+    </div>
+        <div class="mess"> 
+       $blog[message]
+      <!--{$adviewp}--> 
+      
+
+      
+    </div>
+        
+
+        
+
+ 
+ 
+<!--{if $wappages == 1}--> 
+<!--{if $count > $perpage}-->
+
+<!--{/if}-->
+<!--{else}-->
+<!--{if $multi}--><div class="pgbox">$multi</div><!--{/if}-->
+<!--{/if}--> 
+
+<!--{template common/footer}-->
+    

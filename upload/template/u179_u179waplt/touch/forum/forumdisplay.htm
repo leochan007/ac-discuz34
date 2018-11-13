@@ -1,0 +1,114 @@
+<!--{subtemplate common/header}-->
+<!-- header start -->
+<header class="header">
+    <div class="nav">
+		<div class="icon_edit y"><a href="forum.php?mod=post&action=newthread&fid=$_G[fid]" title="{lang send_threads}"><span class="none">{lang send_threads}</span></a></div>
+        <a href="forum.php?forumlist=1" class="z"><img src="template/u179_u179waplt/touch/image/mobile/images/icon_back.png" /></a>
+		<span class="category">
+			<!--{if $subexists && $_G['page'] == 1}-->
+			<span class="display name vm" href="#subname_list">
+				<h2 class="tit"><!--{eval echo strip_tags($_G['forum']['name']) ? strip_tags($_G['forum']['name']) : $_G['forum']['name'];}--></h2>
+
+			</span>
+
+			<!--{else}-->
+			<span class="name">
+				<!--{eval echo strip_tags($_G['forum']['name']) ? strip_tags($_G['forum']['name']) : $_G['forum']['name'];}-->
+			</span>
+			<!--{/if}-->
+		</span>
+    </div>
+</header>
+<!-- header end -->
+<!--{if $subexists && $_G['page'] == 1}-->
+
+<div data-role="content">
+
+                <ul data-role="listview" data-divider-theme="b" data-inset="true" style="margin-left:10px;margin-right:10px;margin-top:10px;margin-bottom:0px;">
+
+
+<span style="background: #000000;border-radio:110px;width:100%;height:100%;border-radius:110px;padding-left:6px;padding-right:6px;padding-top:6px;padding-bottom:6px;line-height:38px;">
+                        <font color="#FFFFFF">&nbsp;&nbsp;<b>下级板块:</b>&nbsp;&nbsp;</font>
+</span>&nbsp;
+
+                    <!--{loop $sublist $sub}-->
+
+
+<span style="background: #666666;border-radio:110px;width:100%;height:100%;border-radius:110px;padding-left:6px;padding-right:6px;padding-top:6px;padding-bottom:6px;line-height:38px;">
+                        <a href="forum.php?mod=forumdisplay&fid={$sub[fid]}" class="block_a" data-transition="none""><font color="#FFFFFF">&nbsp;&nbsp;{$sub['name']}&nbsp;&nbsp;</font></a>
+</span>&nbsp;
+
+
+                    <!--{/loop}-->
+
+                </ul>
+
+</div>
+
+<!--{/if}-->
+
+<div data-role="content">
+<!--{if $_G['forum']['threadtypes']}-->
+ <ul data-role="listview" data-divider-theme="b" data-inset="true" style="margin-left:10px;margin-right:10px;margin-top:10px;margin-bottom:0px;">
+
+
+<span style="background: #000000;border-radio:110px;width:100%;height:100%;border-radius:110px;padding-left:6px;padding-right:6px;padding-top:6px;padding-bottom:6px;line-height:38px;">
+                        <font color="#FFFFFF">&nbsp;&nbsp;<b>分类导航:</b>&nbsp;&nbsp;</font>
+</span>&nbsp;
+
+<!--{loop $_G['forum']['threadtypes']['types'] $id $name}-->
+
+
+<span style="background: #666666;border-radio:110px;width:100%;height:100%;border-radius:110px;padding-left:6px;padding-right:6px;padding-top:6px;padding-bottom:6px;line-height:38px;">
+                        <a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$id$forumdisplayadd[typeid]{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}" class="block_a" data-transition="none""><font color="#FFFFFF">&nbsp;&nbsp;$name&nbsp;&nbsp;</font></a>
+</span>&nbsp;
+
+<!--{/loop}-->
+
+</div>
+<!--{/if}-->
+
+
+<!--{hook/forumdisplay_top_mobile}-->
+<!-- main threadlist start -->
+<!--{if !$subforumonly}-->
+<div class="threadlist">
+			<ul>
+			<!--{if $_G['forum_threadcount']}-->
+				<!--{loop $_G['forum_threadlist'] $key $thread}-->
+					<!--{if !$_G['setting']['mobile']['mobiledisplayorder3'] && $thread['displayorder'] > 0}-->
+						{eval continue;}
+					<!--{/if}-->
+                	<!--{if $thread['displayorder'] > 0 && !$displayorder_thread}-->
+                		{eval $displayorder_thread = 1;}
+                    <!--{/if}-->
+					<!--{if $thread['moved']}-->
+						<!--{eval $thread[tid]=$thread[closed];}-->
+					<!--{/if}-->
+					<li>
+					<!--{hook/forumdisplay_thread_mobile $key}-->
+                    <a href="forum.php?mod=viewthread&tid=$thread[tid]&extra=$extra" $thread[highlight] >
+					{$thread[subject]}
+					<span class="by">$thread[author]</span>
+					</a>
+					<span class="num">{$thread[replies]}</span>
+					<!--{if in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
+						<span class="icon_top"><img src="template/u179_u179waplt/touch/image/mobile/images/icon_top.png"></span>
+					<!--{elseif $thread['digest'] > 0}-->
+						<span class="icon_top"><img src="template/u179_u179waplt/touch/image/mobile/images/icon_digest.png"></span>
+					<!--{elseif $thread['attachment'] == 2 && $_G['setting']['mobile']['mobilesimpletype'] == 0}-->
+						<span class="icon_tu"><img src="template/u179_u179waplt/touch/image/mobile/images/icon_tu.png"></span>
+					<!--{/if}-->
+					</li>
+                <!--{/loop}-->
+            <!--{else}-->
+			<li>{lang forum_nothreads}</li>
+			<!--{/if}-->
+		</ul>
+</div>
+<center>$multipage</center>
+<!--{/if}-->
+<!-- main threadlist end -->
+<!--{hook/forumdisplay_bottom_mobile}-->
+<div class="pullrefresh" style="display:none;"></div>
+<!--{subtemplate common/footer}-->

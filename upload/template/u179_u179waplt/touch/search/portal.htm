@@ -1,0 +1,68 @@
+<!--{template common/header}-->
+<!--顶部导航-->
+
+<link rel="stylesheet" href="template/u179_u179waplt/touch/JS/mobile/JSNV/ui-base-search.css">
+<link rel="stylesheet" href="template/u179_u179waplt/touch/JS/mobile/JSNV/ui-dis.css">
+<link rel="stylesheet" href="template/u179_u179waplt/touch/JS/mobile/JSNV/style.css">
+
+
+
+	<div data-role="header" class="dis_nav_bar">
+		<div class="ui-navbar">
+			<ul class="ui-grid-c" style="width: 96%; left: 2%; padding: .3em 0 .4em;">
+				<li class="ui-block-a ">
+					<label class="ui-btn ui-btn-corner-all dis_nav_select dis_btn_left" ontouchstart="zy_touch(&#39;&#39;, function(){mymenus2(1);});" onmousedown="zy_touch(&#39;&#39;, function(){mymenus2(1);});">
+						<span class="ui-btn-inner">
+							<span class="ui-btn-text ui-big"><a href="search.php?mod=forum&mobile=2" style="color:#FFF;">论坛搜索</a></span>
+						</span>
+					</label>
+				</li>
+				<li class="ui-block-b">
+					<label class="ui-btn ui-btn-corner-all dis_nav_select dis_btn_center" ontouchstart="zy_touch(&#39;&#39;, function(){mymenus2(2);});" onmousedown="zy_touch(&#39;&#39;, function(){mymenus2(2);});">
+						<span class="ui-btn-inner">
+							<span class="ui-btn-text ui-big"><a href="search.php?mod=portal&mobile=2" style="color:#FFF;">文章搜索</a></span>
+						</span>
+					</label>
+				</li>
+				<li class="ui-block-c">
+					<label class="ui-btn ui-btn-corner-all dis_nav_select dis_btn_center" ontouchstart="zy_touch(&#39;&#39;, function(){mymenus2(3);});" onmousedown="zy_touch(&#39;&#39;, function(){mymenus2(3);});">
+						<span class="ui-btn-inner">
+							<span class="ui-btn-text ui-big"><a href="search.php?mod=group&mobile=2" style="color:#FFF;">群组搜索</a></span>
+						</span>
+					</label>
+				</li>
+				<li class="ui-block-d">
+					<label class="ui-btn ui-btn-corner-all dis_nav_select dis_btn_center" ontouchstart="zy_touch(&#39;&#39;, function(){mymenus2(3);});" onmousedown="zy_touch(&#39;&#39;, function(){mymenus2(3);});">
+						<span class="ui-btn-inner">
+							<span class="ui-btn-text ui-big"><a href="home.php?mod=spacecp&ac=search&mobile=2" style="color:#FFF;">会员搜索</a></span>
+						</span>
+					</label>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+<!--顶部导航-->
+ 
+
+<div id="u179_search">
+<form id="searchform" class="searchform" method="post" autocomplete="off" action="search.php?mod=portal&mobile=2">
+			<input type="hidden" name="formhash" value="{FORMHASH}" />
+
+			<!--{subtemplate search/pubsearch}-->
+
+			<!--{eval $policymsgs = $p = '';}-->
+			<!--{loop $_G['setting']['creditspolicy']['search'] $id $policy}-->
+			<!--{block policymsg}--><!--{if $_G['setting']['extcredits'][$id][img]}-->$_G['setting']['extcredits'][$id][img] <!--{/if}-->$_G['setting']['extcredits'][$id][title] $policy $_G['setting']['extcredits'][$id][unit]<!--{/block}-->
+			<!--{eval $policymsgs .= $p.$policymsg;$p = ', ';}-->
+			<!--{/loop}-->
+			<!--{if $policymsgs}--><p>{lang search_credit_msg}</p><!--{/if}-->
+</form>
+
+<!--{if !empty($searchid) && submitcheck('searchsubmit', 1)}-->
+	<!--{subtemplate search/portal_list}-->
+<!--{/if}-->
+</div>
+<center><li>文章搜索</li></center>
+<!--{template common/footer}-->

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[rdii_qukuailian.template]]></item>
+	<item id="RevisionID"><![CDATA[81123]]></item>
+	<item id="SN"><![CDATA[20181015211k5lW7aA75]]></item>
+	<item id="RevisionDateline"><![CDATA[1530756001]]></item>
+	<item id="Data">
+		<item id="/index.htm"><![CDATA[7215ee9c7d9dc229d2921a40e899ec5f]]></item>
+		<item id="/common/header.htm"><![CDATA[d4380b4ddb8724347f3509a1b815698c]]></item>
+		<item id="/common/extend_common.css"><![CDATA[86cb6bc643df42df21a64757f340cedd]]></item>
+		<item id="/common/module.css"><![CDATA[fb6c4dc345d92e90c8251f04f044d3c3]]></item>
+		<item id="/common/common.css"><![CDATA[113d9897497768cc9e2efb5da5075499]]></item>
+		<item id="/common/footer.htm"><![CDATA[63f9ee642b50325f3713dbbbb117e0f1]]></item>
+		<item id="/common/widthauto.css"><![CDATA[50afd272e5c8bd5bb053250d44fd7f95]]></item>
+		<item id="/discuz_style_rdii_qukuailian.xml"><![CDATA[68305d1379dcdefed05da82d92ec5332]]></item>
+		<item id="/preview_large.jpg"><![CDATA[5dd95b58a538042fb01a7a93bd5affba]]></item>
+		<item id="/preview.jpg"><![CDATA[5a6c420ffc0531d3f8aca1ae948017b7]]></item>
+		<item id="/member/login.htm"><![CDATA[4cae17f108f7038618222d5dc4e9d23f]]></item>
+		<item id="/member/register.htm"><![CDATA[1fe133cdb99877e598fbf6530653e3f9]]></item>
+		<item id="/portal/index.htm"><![CDATA[aacb6bde3fc554d9dd77f87ccaaf638d]]></item>
+		<item id="/portal/list_information.htm"><![CDATA[28681e1b7d940cff62edabb1cc127b27]]></item>
+		<item id="/portal/comment.htm"><![CDATA[5c1ee4d58f0dfbb26b2267c17b5378fe]]></item>
+		<item id="/portal/view.htm"><![CDATA[c79dbf0c1f15f8c347bcf98e9ac5f00f]]></item>
+		<item id="/portal/list.htm"><![CDATA[7e0fab10313b32b87de4b3a2dac09ca1]]></item>
+		<item id="/portal/comment_li.htm"><![CDATA[cd9edf4954b419bda3c5a2919803b6a5]]></item>
+		<item id="/portal/portal_comment.htm"><![CDATA[485c2b37799271b0f7a172135b463e63]]></item>
+		<item id="/portal/view_information.htm"><![CDATA[a892e83ca49999eeb3b0061eb9ee7605]]></item>
+		<item id="/forum/discuz.htm"><![CDATA[81364c2b11cf5ae7c7dfa7e8fb60a2c7]]></item>
+		<item id="/forum/viewthread_node.htm"><![CDATA[a162c69f26771df3588b7ee47475ec75]]></item>
+		<item id="/forum/viewthread_node_body.htm"><![CDATA[f9d30cfec7a4098bb195bf06da3a28da]]></item>
+		<item id="/forum/forumdisplay_list.htm"><![CDATA[48394582e17db1c5f34a160414f27432]]></item>
+		<item id="/forum/forumdisplay.htm"><![CDATA[23122cc773952a94a1185c83578600b8]]></item>
+		<item id="/forum/viewthread.htm"><![CDATA[0ddd32839ea23a1711b39ff967cbfec0]]></item>
+		<item id="/src/js/jquery.SuperSlide.js"><![CDATA[cd674d9e02f20426d9acf1d11c85539b]]></item>
+		<item id="/src/js/jquery.min.js"><![CDATA[7563e1e3426612a516d988753ee4f0a1]]></item>
+		<item id="/src/img/pt_home.png"><![CDATA[7cfe119b8a0e1f97999f851116f5b983]]></item>
+		<item id="/src/img/pn.png"><![CDATA[be69edb98d1c7f00cc0493cd9f1e19f9]]></item>
+		<item id="/src/img/date.png"><![CDATA[91de79fdec302dc2eaed3b7af48a66e4]]></item>
+		<item id="/src/img/chart.png"><![CDATA[e87be83b1970eae3b191706c9dfb0ca5]]></item>
+		<item id="/src/img/icon_search.png"><![CDATA[1c12b7f890b33a904b48578e1f3ad634]]></item>
+		<item id="/src/img/search.png"><![CDATA[829c27366476f5ed9a73d91179b945f4]]></item>
+		<item id="/src/img/pt_item.png"><![CDATA[8f42024bfdb1607efe233b5c8b4d910b]]></item>
+		<item id="/src/img/sy_wb_bg.png"><![CDATA[f9a990d4f568466d0896a2c1748c1e08]]></item>
+		<item id="/src/img/bookmarks.png"><![CDATA[8475020a49fd652b1965397fc52eb742]]></item>
+		<item id="/src/img/pg_a_r.gif"><![CDATA[791ba39729bf12ea6a576e764fa6642b]]></item>
+		<item id="/src/img/gongyiad.png"><![CDATA[c12b39634ac9486163e2efb7dbd0dd5e]]></item>
+		<item id="/src/img/pg_a.gif"><![CDATA[905b007b692bf4c159a9b7a4ea911312]]></item>
+		<item id="/src/img/pg_a_on.gif"><![CDATA[cf84f82f401a21e6702441cbd6bf4eca]]></item>
+		<item id="/src/img/logo.png"><![CDATA[8af29650b5a0ba7b802397fe04fa0b17]]></item>
+		<item id="/src/img/pg_a_l.gif"><![CDATA[ddb42d5ecff7b3bd00b0fec312f3db8b]]></item>
+		<item id="/src/img/view.png"><![CDATA[f3a21bce66406472daf31306001d2c0c]]></item>
+		<item id="/src/img/touxiang.jpg"><![CDATA[b1e8cc34c630e960f7d46e32bce8fb8d]]></item>
+		<item id="/src/img/down-icon.png"><![CDATA[07ee032fcbd81da6d752b5b30418e9bd]]></item>
+	</item>
+</root>

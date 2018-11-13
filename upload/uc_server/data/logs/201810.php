@@ -1,0 +1,14 @@
+<?PHP exit;?>	UCenterAdministrator	218.82.247.95	1539607593	login	succeed
+<?PHP exit;?>	UCenterAdministrator	218.82.247.95	1539607940	user_add	username=ted_admin
+<?PHP exit;?>	UCenterAdministrator	218.82.247.95	1539609606	admin_add	username=ted_admin
+<?PHP exit;?>	UCenterAdministrator	218.82.247.95	1539610110	user_add	username=operator_admin
+<?PHP exit;?>	UCenterAdministrator	218.82.247.95	1539653997	login	succeed
+<?PHP exit;?>	UCenterAdministrator	218.82.247.95	1539673073	login	succeed
+<?PHP exit;?>	UCenterAdministrator	218.82.247.95	1539687602	login	succeed
+<?PHP exit;?>	UCenterAdministrator	218.82.247.95	1539740481	login	succeed
+<?PHP exit;?>	UCenterAdministrator	218.82.247.95	1539773970	login	succeed
+<?PHP exit;?>	UCenterAdministrator	218.82.247.95	1539828103	login	succeed
+<?PHP exit;?>	UCenterAdministrator	218.82.247.95	1539859800	login	succeed
+<?PHP exit;?>	UCenterAdministrator	218.82.247.95	1539861688	login	succeed
+<?PHP exit;?>	UCenterAdministrator	218.82.247.95	1539879809	login	succeed
+<?PHP exit;?>	UCenterAdministrator	58.34.37.232	1540090652	login	succeed

@@ -1,0 +1,65 @@
+				<!--{if $list['threadcount']}-->
+					<ul class="hotlist">
+						<!--{loop $list['threadlist'] $key $thread}-->
+<!--{eval include 'template/u179_u179waplt/touch/php/forum-guide.php';}-->
+
+<li class="ui-ignore-space section-1px new-feed">
+<a href="forum.php?mod=viewthread&amp;tid=$thread[tid]">
+<div class="detail-top">
+	<div class="item-user create">
+		<div class="item-user-wrap">
+			<div class="item-user-avator">
+				<img class="avator-img img-ph" src="<!--{avatar($thread[authorid],big,true)}-->">
+			</div>
+			<span class="item-user-text"><span class="item-user-name gbar">$thread[author]</span><span class="item-user-icon"><i class="allow-small-icon"></i></span>
+<!--{loop $forumname $forum}-->
+<span class="item-user-barname">$forum[name]</span>
+<!--{/loop}-->
+<span class="item-user-opera"></span></span><span class="item-user-time">$thread[dateline]</span>
+			<div class="icon-wrap-v2 read-icon-v3">
+				<i class="read-icon"></i><span class="readnum">$thread[views]</span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="go-detail">
+	<div class="report-content">
+		<p class="grouptitle feed-two-line">
+			$thread[subject]
+		</p>
+		<p class="groupbrief feed-three-line">
+			$post['message']
+		</p>
+	</div>
+
+<div class="img-wrap clearfix">
+	<!--{loop $threadtables $value}-->
+	<!--{eval $imagelistkey = getforumimg($value[aid], 0, 500, 250); }-->
+		<div class="feed-img img-ph" style="float:left;width:100%;background:none">
+			<div style="padding: 0 1.5px;">
+				<img hidebg="true" nosize="" style="" src="$imagelistkey">
+			</div>
+		</div>
+
+	<!--{/loop}-->
+</div>
+
+	<div class="clearfix post-bottom-v3">
+		<div class="reply-btn-v3 post-btn-v3">
+			$thread[replies]
+		</div>
+		<div class="like-btn-v3 post-btn-v3">
+			$thread[recommend_add]
+		</div>
+		<div class="more-btn-v3 post-btn-v3">
+		</div>
+	</div>
+</div>
+</a>
+</li>
+
+						<!--{/loop}-->
+					</ul>
+				<!--{else}-->
+					<div class="empty-comment"  style="display: block;position: relative;padding: 56px 0 85px;font-size: 17px;text-align: center;color: #bbb;background: #fff;">{lang guide_nothreads}</div>
+				<!--{/if}-->

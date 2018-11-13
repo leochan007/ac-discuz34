@@ -1,0 +1,580 @@
+/* ----------------------------------
+
+Extend CSS file for Discuz! X
+(C) Made In Rabbit
+http://djsz.ahome.me
+
+Author QQ 690620366
+
+ ---------------------------------- */
+
+/* Main interface style */
+.hdc {
+    min-height: 90px;
+}
+.xi2, .xi2 a, .xi3 a {
+    color: #333;
+}
+
+/* Navigation bar */
+#nv {
+    overflow: hidden;
+    height: 50px;
+    background: black;
+}
+
+#nv li.a {
+    float: left;
+    background:none;
+    padding: 0 16px;
+    height: 50px;
+}
+#nv li {
+    float: left;
+    padding-right: 1px;
+    height: 33px;
+    line-height: 33px;
+    background: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+#nv li {
+    float: left;
+    line-height: 50px;
+    height: 50px;
+    line-height: 50px;
+    background:none;
+    font-weight: 700;
+    font-size: 14px;
+}
+#nv li.hover a:hover, #nv li.hover a {
+    background: #FFF;
+    color: black;
+    height: 50px;
+    text-decoration:none;
+}
+#nv li a:hover {
+    background: #FFF;
+    color: black;
+    height: 50px;
+    text-decoration: none;
+    transition: background-color 450ms ease 0s,color 450ms ease 0s;
+}
+#nv li.a a {
+    background: #FFF;
+    color: black;
+    height:50px;
+    text-decoration: none;
+}
+#qmenu {
+    float: right;
+    display: inline;
+    margin: 12px 12px 0;
+    padding: 0 12px 0 0;
+    width: 83px;
+    height: 26px;
+    background: url('{IMGDIR}/qmenu.png')no-repeat 0 0;
+    line-height: 26px;
+    text-align: center;
+    color: #555;
+    overflow: hidden;
+}
+#qmenu:hover {
+    float: right;
+    display: inline;
+    margin: 12px 12px 0;
+    padding: 0 12px 0 0;
+    width: 83px;
+    height: 26px;
+    background: url('{IMGDIR}/qmenu.png')no-repeat 0 0;
+    line-height: 26px;
+    text-align: center;
+    color: #555;
+    overflow: hidden;
+}
+#qmenu.a {
+    position: relative;
+    z-index: 302;
+    background-position: 0 -30px;
+}
+
+/* Block style */
+
+.newbm{
+  #F5F5F5 !important;
+}
+
+.fl .bm_h {
+    margin: 0 10px;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid black;
+    background: none;
+}
+
+.fl {
+    border: 1px solid #FFF;
+    background: #FFF;
+}
+.bm {
+    margin-bottom: 10px;
+    background: none;
+}
+.fl .bm {
+    margin-bottom: 0;
+    border: none;
+}
+.bm {
+    background: #FFF !important;
+}
+.fl .bm_h {
+    margin: 0 10px;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid black;
+    background: #FFF;
+}
+.bm_h {
+    line-height: 42px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 10px;
+}
+.fl .bm_h h2 a {
+    float: left;
+    height: 38px;
+    line-height: 40px;
+    border-bottom: 4px solid black;
+    font-size: 16px;
+    padding: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+.bm_h {
+    height: 42px !important;
+}
+
+/* Search bar */
+#scbar {
+    width: 415px;
+    float: right;
+    overflow: hidden;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #FFF;
+}
+.rabbit_search {
+    height: 38px;
+    background: #fff;
+}
+.scbar_icon_td {
+    width: 300px;
+    border-radius: 6px;
+}
+.scbar_txt_td, .scbar_type_td {
+    width: 300px;
+    border-radius: 5px;
+    background:none;
+}.scbar_type_td{width:68px !important;}
+#scbar_txt {
+    width: 300px;
+    border: 1px solid #fff;
+    outline: none;
+    padding-left: 10px;
+    background: #fff;
+}
+.scbar_type_td {
+    background: url('{IMGDIR}/newsearch.png')no-repeat 0 2px;
+}
+#scbar_type {
+    display: block;
+    padding-left: 10px;
+    text-align: left;
+    text-decoration: none;
+}
+.scbar_btn_td {
+    width: 38px;
+    background: url('{IMGDIR}/rb.png')no-repeat 1px 2px;	margin-right: 5px;
+}
+#scbar_btn {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent none;
+    box-shadow: none;
+}
+
+#um {
+    float: right;
+    line-height: 33px;
+    zoom: 1;
+    padding-top: 0px;
+    padding-right: 0px;
+}
+.vwmy {
+    padding-left: 0px;
+    background: none;
+}
+
+#toptb {
+    min-width: 960px;
+    border-bottom: 1px solid #CDCDCD;
+    background: #FFF;
+    line-height: 28px;
+}
+
+/* post style but now it¡¯s Useless */
+.rabbit_black{
+    display: block;
+    width: 80px;
+    height: 33px;
+    background: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFF;
+    text-align: center;
+    line-height: 33px;
+    border-radius: 6px;
+}
+.rabbit_black:hover {
+    display: block;
+    width: 80px;
+    height: 33px;
+    background: rgba(0, 0, 0, 0.66);
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFF;
+    text-align: center;
+    line-height: 33px;
+    border-radius: 6px;
+}
+.pnc, a.pnc {
+    border-color: black;
+    background-color: black;
+    background-position: 0 -48px;
+    color: #FFF !important;
+}
+a {
+    text-decoration: none;
+}
+
+
+/* other */
+#chart {
+    margin-bottom: 5px;
+    background: #F5F5F5;
+}
+.pgs {
+    background: #F5F5F5 !important;
+}
+
+/* pls */
+.pls .avatar img {padding:5px !important;border:1px solid #cdcdcd !important;border-radius:5px !important;background:none !important;width:100px !important;}
+.pls {background:#fff !important;}
+.pls .pi {padding-left:0px !important;text-align:center !important;}
+.pls .avatar {text-align:center !important;}
+
+/* rizhi */
+.ct3_a .mn {
+    float: left;
+    margin-left: 20px;
+    width: 565px;
+    background: whitesmoke;
+}
+.bm {
+    background: #F5F5F5;
+}
+.pbr {
+    height: 10px !important;
+}
+.pls dd {color:#0083be !important;}
+
+/* dr*/
+.rfm {border-bottom:0px;font-size:14px;}
+.rfm input{margin-left:10px;margin-right:10px;padding:10px;border-radius:10px;font-size:13px;}
+.rfm input:focus{outline:none;}
+.rfm select{margin-left:10px;margin-right:10px;padding:10px;border-radius:10px;font-size:13px;}
+.rfm select:focus{outline:none;}
+.rfm button{background:#333333 url('');padding:10px;padding-left:40px;padding-right:40px;padding-top:7px;height:40px;font-size:20px;border-radius:10px;box-shadow:1px 1px 1px #CCCCCC;}
+.rfm button:hover{background:#888888 url('');padding:10px;padding-left:40px;padding-right:40px;padding-top:7px;height:40px;font-size:20px;border-radius:10px;box-shadow:3px 3px 5px #CCCCCC;}
+
+/* 1.4new */
+#um, #um a {
+    color: #444;
+    text-decoration: none;
+}
+#um, #um a:hover {
+    color: #607D8B;
+    text-decoration: none;
+}
+
+.ttp {
+    margin-bottom: 5px;
+    padding-top: 10px;
+    border-width: 2px 0 0;
+    background: none !important;
+}
+.pg label .px {
+    text-align: center;
+    width: 25px;
+    height: 16px;
+    line-height: 16px;
+    margin-top: 1px !important;
+}
+#pt {
+    margin: 2px 0;
+    height: 29px;
+    border: none;
+    background: none !important;
+    line-height: 29px;
+}
+
+
+/* 1.4new fastpost*/
+#f_pst .plc {
+    padding: 20px;
+}
+
+.tedt {
+    width: 100% !important;
+    border: 1px solid;
+    border-color: #D4D4D4;
+}
+.teat .bar {
+    padding: 0 10px 0 0;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 1px solid #e1e1e1;
+    background: #fafafa;
+}
+.tedt .area {
+    padding: 4px;
+    background: #FFF;
+    zoom: 1;
+}
+#fastsmilies {
+    text-align: right;
+    display: none;
+}
+.hasfsl {
+    margin-right: 0px!important;
+    zoom: 1;
+}
+.rabbit_post_hfbg {
+    border-color: #313031 !important;
+    background-color: #313031 !important;
+    background-position: 0 -48px;
+    color: #FFF !important;
+}
+.rabbit_post_hf {
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 3px;
+    padding: 0;
+    height: 23px;
+    border: 1px solid #999;
+    background: none;
+    cursor: pointer;
+    -moz-box-shadow: 0 1px 0 #E5E5E5;
+    -webkit-box-shadow: 0 1px 0 #E5E5E5;
+    box-shadow: 0 1px 0 #E5E5E5;
+    width: 120px;
+    float: right;
+    height: 30px;
+    border-radius: 5px;
+}
+.rabbit_post_hf:hover {
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 3px;
+    padding: 0;
+    height: 23px;
+    border: 1px solid rgba(49, 48, 49, 0.84) !important;
+    background: none;
+    cursor: pointer;
+    -moz-box-shadow: 0 1px 0 #E5E5E5;
+    -webkit-box-shadow: 0 1px 0 #E5E5E5;
+    box-shadow: 0 1px 0 #E5E5E5;
+    width: 120px;
+    float: right;
+    height: 30px;
+    background:rgba(49, 48, 49, 0.84) !important !important;
+    border-radius: 5px;
+}
+
+.rabbit_fastpost_name {
+    font-weight: 700;
+    border-bottom: 1px dashed #c3cfca;
+    padding-top: 2px;
+    height: 58px;
+    line-height: 58px;
+    overflow: hidden;
+    font-size: 15px;
+    text-align: center;
+}
+.rabbit_fastpost {
+    background: #ececec !important;
+}
+.rabbit_hf{
+    margin-bottom: 18px;
+    font-size: 18px;
+}
+.pn {
+    background: #333333 !important;
+    border-radius: 5px !important;
+    border: 1px solid #CCCCCC !important;
+    color: #FFFFFF !important;
+}
+.newpn {
+    vertical-align: middle;
+    overflow: hidden;
+    margin-right: 3px;
+    padding: 0;
+    height: 23px;
+    border: 1px solid #999;
+    cursor: pointer;
+    -moz-box-shadow: 0 1px 0 #E5E5E5;
+    -webkit-box-shadow: 0 1px 0 #E5E5E5;
+    box-shadow: 0 1px 0 #E5E5E5;
+    background: #E5E5E5 url('{IMGDIR}/pn.png') repeat-x 0 0;
+}
+.newpn em, .newpn strong {
+    font-weight: 700;
+}
+.newpn em, .newpn span, .newpn strong {
+    padding: 0 10px;
+    line-height: 21px;
+}
+
+/*discuz 1.4new*/
+.oll li {
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 19.9%;
+    height: 35px !important;
+    line-height: 24px;
+}
+
+/* 1.6*/
+.bm_h .o img {
+    float: right;
+    margin-top: 17px !important;
+    cursor: pointer;
+}
+
+#toptb .z a {
+    margin-top: 2px;
+    text-decoration: none;
+}
+#toptb .z a:hover {
+    margin-top: 2px;
+    text-decoration: none;
+    color: #607D8B;
+}
+
+/* 1.9*/
+
+.pg strong {
+    background-color: rgba(0, 0, 0, 0.82)!important;
+    border-radius: 2px !important;
+    color: #FFF !important;
+    border-color: rgba(0, 0, 0, 0.82) !important;
+}
+.pg a, .pg strong, .pgb a, .pg label {
+    float: left;
+    display: inline;
+    margin-left: 4px;
+    padding: 0 8px;
+    height: 26px;
+    border: 1px solid;
+    border-color: #E2E2E2;
+    background-color: #FFF;
+    background-repeat: no-repeat;
+    color: #333;
+    overflow: hidden;
+    text-decoration: none;
+    border-radius: 2px;
+}
+.pgb a {
+    padding-left: 25px !important;
+}
+.pgb a, .ttp a, .ttp .num, #p_btn a, .acpn, .acpnc {
+    transition: all 0.2s ease-in-out;
+    -webkit-transform: all 0.2s ease-in-out;
+    -moz-transform: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+}
+.pg a {
+    transition: all 0.2s ease-in-out;
+    -webkit-transform: all 0.2s ease-in-out;
+    -moz-transform: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+}
+.pgb a:hover {
+    color: #FFF;
+    background: rgba(0,0,0,0.82);
+    border-radius: 50px;
+    margin-top: -2px;
+    background: rgba(0,0,0,0.82)url('{IMGDIR}/tz_pass.gif') no-repeat !important;
+    background-position: 6px 50% !important;
+}
+.pg a:hover {
+    color: #FFF;
+    background: rgba(0,0,0,0.82);
+    border-radius: 50px;
+    margin-top: -2px;
+    color: #FFF;
+    background: rgba(0,0,0,0.82);
+}
+.pg a.nxt:hover {
+   color: #FFF;
+    background: rgba(0,0,0,0.82);
+    border-radius: 50px;
+    margin-top: -2px;
+    background-position: 6px 50% !important;
+    background: rgba(0,0,0,0.82) url('{IMGDIR}/next.gif') no-repeat 90% 50% !important;
+}
+.ttp a, .ttp strong {
+    float: left;
+    margin-right: 5px;
+    padding: 4px 8px 3px;
+    height: 18px;
+    border: 1px solid rgba(158, 158, 158, 0.38) !important;
+    background: #FFF !important;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+.ttp .a a {
+    padding-right: 12px;
+    padding-left: 12px;
+    border-color: #2C2C2C !important;
+    background: rgba(0,0,0,0.82) !important;
+    color: #FFF !important;
+    border-radius: 5px;
+}
+.ttp .num {
+    background: #2C2C2C !important;
+    padding: 0 5px;
+    margin-left: 5px;
+    border-radius: 3px;
+    color: #FFF !important;
+}
+.ttp a:hover {
+    border-color: #369;
+    color: #FFF !important;
+    text-decoration: none;
+    background: #2C2C2C !important;
+}
+.ttp .a .num, .ttp a:hover .num {
+    background: #fff !important;
+    color: #777!important;
+}
+#fastpostsubmit {
+    margin-right: 0;
+    height: 30px;
+    border: none;
+}/* 2.0 */#vfastpost .pn {    background: url('{IMGDIR}/v.png') no-repeat 0 0 !important;}#modmenu {    background: #fff;    border: 1px #e5e5e5 solid !important;    height: 20px;    margin-bottom: 10px !important;    line-height: 28px;    padding-left: 10px;}#newspecial, #newspecialtmp,#post_reply,#post_replytmp{    display: block;    width: 80px;    height: 33px;    background: #313031;    font-size: 14px;    font-weight: 700;    color: #FFF;    text-align: center;    line-height: 33px;	text-decoration:none !important;}#newspecial:hover, #newspecialtmp:hover,#post_reply:hover,#post_replytmp:hover {    background: #313031e6;    text-decoration:none !important;}/* 2.1 */#onlinelist .cony_onlineav {    width: 26px;    height: 26px;    margin: 0px;    padding: 2px;    border: 1px solid #b9b9b9;}

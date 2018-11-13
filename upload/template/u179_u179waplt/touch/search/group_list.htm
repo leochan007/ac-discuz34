@@ -1,0 +1,110 @@
+<div class="wp">
+	<div id="u179_search_tit">
+    	<!--{if $keyword && empty($searchstring[2])}-->{lang search_group_result_keyword}  <!--{if empty($viewgroup) && !empty($grouplist)}--><a href="search.php?mod=group&searchid=$searchid&orderby=$orderby&ascdesc=$ascdesc&searchsubmit=yes&viewgroup=1" target="_blank">{lang search_group_viewgroup}</a><!--{/if}--><!--{elseif $viewgroup}-->{lang search_group_result}<!--{else}-->{lang search_result}<!--{/if}-->
+	</div>
+<!--{if $viewgroup}-->
+	<!--{if empty($grouplist)}-->
+		<div id="u179_noinfo">{lang search_nomatch}</div>
+	<!--{else}-->
+		<div>
+			<!--{loop $grouplist $group}-->
+				<div id="u179_group_type_list">
+                	<a href="forum.php?mod=group&fid=$group[fid]" target="_blank">
+                		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="38" valign="top">
+                            <div class="u179_group_img24_box">
+                            <div class="u179_group_img24">
+                            	<img width="24" height="24" src="$group[icon]" />
+                            </div>
+                            </div>
+                            </td>
+                            <td>
+                            <div>
+                            	<span style="font-size:16px; font-weight:bold;">$group[name]<!--{if $group['gviewperm'] == 1}--> ({lang public})<!--{/if}--></span>
+                            	<span style="color:#666666;" class="y">{lang member}: $group[membernum], {lang threads}: $group[threads]</span>
+							</div>
+                            <div>$val[description]</div>
+                            <div class="u179_dy">
+                            	<span class="y">{lang credits}: $group[commoncredits]</span>
+                            	<span class="z">{lang creating_time}: $group[dateline]</span>
+                            </div>
+                            <div id="u179_clear"></div>
+                            </td>
+                          </tr>
+                        </table>
+                    </a>
+				</div>
+			<!--{/loop}-->
+		</div>
+		<!--{if !empty($multipage)}-->
+        <center>$multipage</center>
+        <div id="u179_multi_footer"></div>
+        <!--{/if}-->
+	<!--{/if}-->
+<!--{else}-->
+	<!--{if !empty($grouplist) && $page < 2}-->
+		<div>
+			<!--{loop $grouplist $group}-->
+				<div id="u179_group_type_list">
+					<a href="forum.php?mod=group&fid=$group[fid]" target="_blank">
+                		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="38" valign="top">
+                            <div class="u179_group_img24_box">
+                            <div class="u179_group_img24">
+                            	<img width="24" height="24" src="$group[icon]" />
+                            </div>
+                            </div>
+                            </td>
+                            <td>
+                            <div>
+                            	<span style="font-size:16px; font-weight:bold;">$group[name]<!--{if $group['gviewperm'] == 1}--> ({lang public})<!--{/if}--></span>
+                            	<span style="color:#666666;" class="y">{lang member}: $group[membernum], {lang threads}: $group[threads]</span>
+							</div>
+                            <div>$val[description]</div>
+                            <div class="u179_dy">
+                            	<span class="y">{lang credits}: $group[commoncredits]</span>
+                            	<span class="z">{lang creating_time}: $group[dateline]</span>
+                            </div>
+                            <div id="u179_clear"></div>
+                            </td>
+                          </tr>
+                        </table>
+                    </a>
+				</div>
+			<!--{/loop}-->
+		</div>
+	<!--{/if}-->
+	<!--{if !empty($threadlist)}-->
+		<div>
+			<div>
+				<!--{loop $threadlist $thread}-->
+            	<div id="u179_search_list">
+				
+                    <div id="u179_search_by">
+                        <span class="z">$thread[dateline]</span>
+                        <span class="y">$thread[replies] {lang join_thread}, $thread[views] {lang focus_show}</span>
+                        <div id="u179_clear"></div>
+                    </div>
+                    
+                    <a href="forum.php?mod=viewthread&tid=$thread[realtid]&highlight=$index[keywords]" target="_blank" $thread[highlight]>
+                    <div id="u179_search_word_tit">$thread[subject]</div>                    
+                    <div id="u179_search_word_msg">
+                    	<span class="u179_search_yh"><sub>"</sub></span>$thread[message]</span>
+                    </div>
+                    </a>
+                    
+
+				
+				</div>
+				<!--{/loop}-->
+			</div>
+		</div>
+	<!--{/if}-->
+	<!--{if !empty($multipage)}-->
+    <center>$multipage</center>
+    <div id="u179_multi_footer"></div>
+    <!--{/if}-->
+<!--{/if}-->
+</div>

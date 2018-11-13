@@ -1,0 +1,290 @@
+	</div>
+<!-- member tc-->
+<!--{if $_G['uid']}-->
+<!--{eval 
+$image = "template/rabbit_office/tzmy";}-->
+
+<!--{eval 
+$jdt = ($_G[member][credits]/10000)*100;}-->
+
+<!--{if $jdt >= 100}-->
+<!--{eval 
+$jdt = 100;}-->
+
+<!--{else}-->
+<!--{eval 
+$jdt = ($_G[member][credits]/10000)*100;}-->
+
+<!--{/if}-->
+<!--{eval 
+$jdtbfb = floor($jdt)."%";}-->
+
+<!--{eval $cony_num = DB::fetch_first("SELECT * FROM ".DB::table('common_member_count')." WHERE uid='".$_G['uid']."'");}-->
+<div id="cony_mbtc" style="display:none;">
+<div class="title">
+<em>&#x4E2A;&#x4EBA;&#x9762;&#x677F;</em>
+<span><a href="javascript:;" class="flbc"onclick="document.getElementById('cony_mbtc').style.display='none';document.getElementById('cony_usermb').style.display='block';">&#x5173;&#x95ED;&#x9762;&#x677F;</a></span>
+</div>
+<div class="cony_content">
+<div class="content_top">
+<div class="avtar"><img src="uc_server/avatar.php?uid=$_G['uid']&amp;size=big"></div>
+<div class="nameandjdt">
+<div class="name">{$_G[username]}<span class="uid">UID:$_G['uid']</span></div>
+<div class="tc_jdt">
+<div class="jdt_border">
+<div style="float:left;width:{$jdtbfb};height: 10px;background: #4E5C72;"></div>
+</div>
+<div class="jdt_bfb"title="&#x60A8;&#x5F53;&#x524D;&#x79EF;&#x5206;&#x5360;&#x603B;&#x79EF;&#x5206;&#x767E;&#x5206;&#x4E4B;$jdtbfb">$jdtbfb</div>
+<div class="jdt_bottom">
+<div class="gruoptt">$_G[group][grouptitle]</div>
+<div class="jdt_num"style="float:right !important;{if $_G[member][credits] <"100"}padding-right:40px !important;{else}padding-right:20px !important;{/if}"title="&#x60A8;&#x5F53;&#x524D;&#x7684;&#x79EF;&#x5206;&#x4E3A;$_G[member][credits]">$_G[member][credits]/10000</div>
+</div>
+</div>
+</div>
+<div class="num">
+<div class="tns xg2">
+<table cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th><p><span class="xi2">$cony_num['posts']</span></p>&#x4E3B;&#x9898;</th>
+<th><p><span class="xi2">$cony_num['threads']</span></p>&#x8D34;&#x6570;</th>
+<td><p><span class="xi2">$cony_num['digestposts']</span></p>&#x7CBE;&#x534E;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="content_bottom">
+<ul>
+<li><img src="{$image}/1.png"><a href="home.php?mod=spacecp">&#x8D26;&#x53F7;&#x8BBE;&#x7F6E;</a></li>
+<li><img src="{$image}/9.png"><a href="home.php?mod=space&amp;do=notice"><!--{if $_G[member][newprompt]}--><font color="red">&#x6709;&#x65B0;&#x63D0;&#x9192;</font><!--{else}-->&#x7AD9;&#x5185;&#x63D0;&#x9192;<!--{/if}--></a></li>
+<li><img src="{$image}/2.png"><a href="home.php?mod=space&amp;do=notice" ><!--{if $_G[member][newpm]}--><font color="red">&#x6536;&#x5230;&#x77ED;&#x4FE1;</font><!--{else}-->&#x77ED;&#x4FE1;&#x6D88;&#x606F;<!--{/if}--></a></li>
+<li><img src="{$image}/3.png"><a href="home.php?mod=space&do=friend">&#x6211;&#x7684;&#x597D;&#x53CB;</a></li>
+<li><img src="{$image}/4.png"><a href="forum.php?mod=guide&view=my" >&#x6211;&#x7684;&#x5E16;&#x5B50;</a></li>
+<li><img src="{$image}/5.png"><a href="home.php?mod=space&do=favorite&view=me">&#x6211;&#x7684;&#x6536;&#x85CF;</a></li>
+<li><img src="{$image}/6.png"><a href="<!--{if ($_G['group']['allowmanagearticle'] || $_G['group']['allowpostarticle'] || $_G['group']['allowdiy'] || getstatus($_G['member']['allowadmincp'], 4) || getstatus($_G['member']['allowadmincp'], 6) || getstatus($_G['member']['allowadmincp'], 2) || getstatus($_G['member']['allowadmincp'], 3))}-->
+portal.php?mod=portalcp<!--{else}--><!--{/if}-->"<!--{if ($_G['group']['allowmanagearticle'] || $_G['group']['allowpostarticle'] || $_G['group']['allowdiy'] || getstatus($_G['member']['allowadmincp'], 4) || getstatus($_G['member']['allowadmincp'], 6) || getstatus($_G['member']['allowadmincp'], 2) || getstatus($_G['member']['allowadmincp'], 3))}--><!--{else}-->title="&#x65E0;&#x6743;&#x8BBF;&#x95EE;"<!--{/if}-->>&#x95E8;&#x6237;&#x7BA1;&#x7406;</a></li>
+<li><img src="{$image}/7.png"><a href="<!--{if $_G['uid'] && getstatus($_G['member']['allowadmincp'], 1)}-->admin.php<!--{else}--><!--{/if}-->" target="_blank" <!--{if $_G['uid'] && getstatus($_G['member']['allowadmincp'], 1)}--><!--{else}-->title="&#x65E0;&#x6743;&#x8BBF;&#x95EE;"<!--{/if}-->>&#x7BA1;&#x7406;&#x4E2D;&#x5FC3;</a></li>
+<li><img src="{$image}/10.png"><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">&#x6CE8;&#x9500;&#x8D26;&#x53F7;</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!--{/if}-->
+<!-- member tc-->
+<!-- ueser-->
+<!--{if $_G['uid']}-->
+<!--{if $_G[member][newprompt]}-->
+<div id="cony_usermb_new" onclick="document.getElementById('cony_mbtc').style.display='block';document.getElementById('cony_usermb').style.display='none';">&#x6536;&#x5230;&#x65B0;&#x63D0;&#x9192;</div>
+<!--{elseif $_G[member][newpm]}-->
+<div id="cony_usermb_new" onclick="document.getElementById('cony_mbtc').style.display='block';document.getElementById('cony_usermb').style.display='none';"> 
+&#x6536;&#x5230;&#x65B0;&#x77ED;&#x4FE1;
+</div>
+<!--{else}-->
+<div id="cony_usermb" onclick="document.getElementById('cony_mbtc').style.display='block';document.getElementById('cony_usermb').style.display='none';">&#x6253;&#x5F00;&#x4E2A;&#x4EBA;&#x9762;&#x677F;</div>
+<!--{/if}-->
+<!--{elseif !$_G['uid']}-->
+<div id="cony_usermb" onclick="document.getElementById('cony_yktc').style.display='block';">&#x767B;&#x5F55;&#x6216;&#x6CE8;&#x518C;</div>
+<!-- yk-->
+<div id="cony_yktc"style="display:none;">
+<div class="title">
+<em>&#x60A8;&#x597D;&#x6E38;&#x5BA2;,&#x8BF7;&#x9009;&#x62E9;&#xFF1A;</em>
+<span><a href="javascript:;" class="flbc"onclick="document.getElementById('cony_yktc').style.display='none'">&#x5173;&#x95ED;&#x9762;&#x677F;</a></span>
+</div>
+<div id="cony_tc_yk">
+<div class="cony_tcyk_dr"><a href="javascript:;" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login');document.getElementById('cony_yktc').style.display='none';" style="text-decoration: none;"><i></i></a><p><a href="javascript:;" onclick="showWindow('login', 'member.php?mod=logging&amp;action=login');document.getElementById('cony_yktc').style.display='none';" style="text-decoration: none;">&#x767B;&#x5F55;&#x8D26;&#x53F7;</a></p></div>
+<div class="cony_tcyk_zc"><a href="member.php?mod=register" style="text-decoration: none;"><i></i></a><p><a href="member.php?mod=register" style="text-decoration: none;">&#x6CE8;&#x518C;&#x8D26;&#x53F7;</a></p></div>
+</div>
+</div>
+<!-- yk-->
+<!--{/if}-->
+<!-- ueser-->
+<!--{if empty($topic) || ($topic[usefooter])}-->
+	<!--{eval $focusid = getfocus_rand($_G[basescript]);}-->
+	<!--{if $focusid !== null}-->
+		<!--{eval $focus = $_G['cache']['focus']['data'][$focusid];}-->
+		<!--{eval $focusnum = count($_G['setting']['focus'][$_G[basescript]]);}-->
+		<div class="focus" id="sitefocus">
+			<div class="bm">
+				<div class="bm_h cl">
+					<a href="javascript:;" onclick="setcookie('nofocus_$_G[basescript]', 1, $_G['cache']['focus']['cookie']*3600);$('sitefocus').style.display='none'" class="y" title="{lang close}">{lang close}</a>
+					<h2>
+						<!--{if $_G['cache']['focus']['title']}-->{$_G['cache']['focus']['title']}<!--{else}-->{lang focus_hottopics}<!--{/if}-->
+						<span id="focus_ctrl" class="fctrl"><img src="{IMGDIR}/pic_nv_prev.gif" alt="{lang footer_previous}" title="{lang footer_previous}" id="focusprev" class="cur1" onclick="showfocus('prev');" /> <em><span id="focuscur"></span>/$focusnum</em> <img src="{IMGDIR}/pic_nv_next.gif" alt="{lang footer_next}" title="{lang footer_next}" id="focusnext" class="cur1" onclick="showfocus('next')" /></span>
+					</h2>
+				</div>
+				<div class="bm_c" id="focus_con">
+				</div>
+			</div>
+		</div>
+		<!--{eval $focusi = 0;}-->
+		<!--{loop $_G['setting']['focus'][$_G[basescript]] $id}-->
+				<div class="bm_c" style="display: none" id="focus_$focusi">
+					<dl class="xld cl bbda">
+						<dt><a href="{$_G['cache']['focus']['data'][$id]['url']}" class="xi2" target="_blank">$_G['cache']['focus']['data'][$id]['subject']</a></dt>
+						<!--{if $_G['cache']['focus']['data'][$id][image]}-->
+						<dd class="m"><a href="{$_G['cache']['focus']['data'][$id]['url']}" target="_blank"><img src="{$_G['cache']['focus']['data'][$id]['image']}" alt="$_G['cache']['focus']['data'][$id]['subject']" /></a></dd>
+						<!--{/if}-->
+						<dd>$_G['cache']['focus']['data'][$id]['summary']</dd>
+					</dl>
+					<p class="ptn cl"><a href="{$_G['cache']['focus']['data'][$id]['url']}" class="xi2 y" target="_blank">{lang focus_show} &raquo;</a></p>
+				</div>
+		<!--{eval $focusi ++;}-->
+		<!--{/loop}-->
+		<script type="text/javascript">
+			var focusnum = $focusnum;
+			if(focusnum < 2) {
+				$('focus_ctrl').style.display = 'none';
+			}
+			if(!$('focuscur').innerHTML) {
+				var randomnum = parseInt(Math.round(Math.random() * focusnum));
+				$('focuscur').innerHTML = Math.max(1, randomnum);
+			}
+			showfocus();
+			var focusautoshow = window.setInterval('showfocus(\'next\', 1);', 5000);
+		</script>
+	<!--{/if}-->
+	<!--{if $_G['uid'] && $_G['member']['allowadmincp'] == 1 && $_G['setting']['showpatchnotice'] == 1}-->
+		<div class="focus patch" id="patch_notice"></div>
+	<!--{/if}-->
+
+	<!--{ad/footerbanner/wp a_f/1}--><!--{ad/footerbanner/wp a_f/2}--><!--{ad/footerbanner/wp a_f/3}-->
+	<!--{ad/float/a_fl/1}--><!--{ad/float/a_fr/2}-->
+	<!--{ad/couplebanner/a_fl a_cb/1}--><!--{ad/couplebanner/a_fr a_cb/2}-->
+	<!--{ad/cornerbanner/a_cn}-->
+
+	<!--{hook/global_footer}-->
+	<div id="ft" class="wp cl"style="padding: 0px !important;
+    border-top: none !important;">
+		
+		</div>
+		
+		<!--{eval updatesession();}-->
+		<!--{if $_G['uid'] && $_G['group']['allowinvisible']}-->
+			<script type="text/javascript">
+			var invisiblestatus = '<!--{if $_G['session']['invisible']}-->{lang login_invisible_mode}<!--{else}-->{lang login_normal_mode}<!--{/if}-->';
+			var loginstatusobj = $('loginstatusid');
+			if(loginstatusobj != undefined && loginstatusobj != null) loginstatusobj.innerHTML = invisiblestatus;
+			</script>
+		<!--{/if}-->
+	</div>
+<!--{/if}-->
+
+<!--{if !$_G['setting']['bbclosed'] && !$_G['member']['freeze'] && !$_G['member']['groupexpiry']}-->
+	<!--{if $_G[uid] && !isset($_G['cookie']['checkpm'])}-->
+	<script type="text/javascript" src="home.php?mod=spacecp&ac=pm&op=checknewpm&rand=$_G[timestamp]"></script>
+	<!--{/if}-->
+
+	<!--{if $_G[uid] && helper_access::check_module('follow') && !isset($_G['cookie']['checkfollow'])}-->
+	<script type="text/javascript" src="home.php?mod=spacecp&ac=follow&op=checkfeed&rand=$_G[timestamp]"></script>
+	<!--{/if}-->
+
+	<!--{if !isset($_G['cookie']['sendmail'])}-->
+	<script type="text/javascript" src="home.php?mod=misc&ac=sendmail&rand=$_G[timestamp]"></script>
+	<!--{/if}-->
+
+	<!--{if $_G[uid] && $_G['member']['allowadmincp'] == 1 && !isset($_G['cookie']['checkpatch'])}-->
+	<script type="text/javascript" src="misc.php?mod=patch&action=checkpatch&rand=$_G[timestamp]"></script>
+	<!--{/if}-->
+<!--{/if}-->
+
+<!--{if $_GET['diy'] == 'yes'}-->
+	<!--{if check_diy_perm($topic) && (empty($do) || $do != 'index')}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}common_diy.js?{VERHASH}"></script>
+		<script type="text/javascript" src="{$_G[setting][jspath]}portal_diy{if !check_diy_perm($topic, 'layout')}_data{/if}.js?{VERHASH}"></script>
+	<!--{/if}-->
+	<!--{if $space['self'] && CURMODULE == 'space' && $do == 'index'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}common_diy.js?{VERHASH}"></script>
+		<script type="text/javascript" src="{$_G[setting][jspath]}space_diy.js?{VERHASH}"></script>
+	<!--{/if}-->
+<!--{/if}-->
+<!--{if $_G['uid'] && $_G['member']['allowadmincp'] == 1 && $_G['setting']['showpatchnotice'] == 1}-->
+	<script type="text/javascript">patchNotice();</script>
+<!--{/if}-->
+<!--{if $_G['uid'] && $_G['member']['allowadmincp'] == 1 && empty($_G['cookie']['pluginnotice'])}-->
+	<div class="focus plugin" id="plugin_notice"></div>
+	<script type="text/javascript">pluginNotice();</script>
+<!--{/if}-->
+<!--{if !$_G['setting']['bbclosed'] && !$_G['member']['freeze'] && !$_G['member']['groupexpiry'] && $_G['setting']['disableipnotice'] != 1 && $_G['uid'] && !empty($_G['cookie']['lip'])}-->
+	<div class="focus plugin" id="ip_notice"></div>
+	<script type="text/javascript">ipNotice();</script>
+<!--{/if}-->
+<!--{if $_G['member']['newprompt'] && (empty($_G['cookie']['promptstate_'.$_G[uid]]) || $_G['cookie']['promptstate_'.$_G[uid]] != $_G['member']['newprompt']) && $_GET['do'] != 'notice'}-->
+	<script type="text/javascript">noticeTitle();</script>
+<!--{/if}-->
+
+<!--{if ($_G[member][newpm] || $_G[member][newprompt]) && empty($_G['cookie']['ignore_notice'])}-->
+	<script type="text/javascript" src="{$_G[setting][jspath]}html5notification.js?{VERHASH}"></script>
+	<script type="text/javascript">
+	var h5n = new Html5notification();
+	if(h5n.issupport()) {
+		<!--{if $_G[member][newpm] && $_GET[do] != 'pm'}-->
+		h5n.shownotification('pm', '$_G[siteurl]home.php?mod=space&do=pm', '<!--{avatar($_G[uid],small,true)}-->', '{lang newpm_subject}', '{lang newpm_notice_info}');
+		<!--{/if}-->
+		<!--{if $_G[member][newprompt] && $_GET[do] != 'notice'}-->
+				<!--{loop $_G['member']['category_num'] $key $val}-->
+					<!--{eval $noticetitle = lang('template', 'notice_'.$key);}-->
+					h5n.shownotification('notice_$key', '$_G[siteurl]home.php?mod=space&do=notice&view=$key', '<!--{avatar($_G[uid],small,true)}-->', '$noticetitle ($val)', '{lang newnotice_notice_info}');
+				<!--{/loop}-->
+		<!--{/if}-->
+	}
+	</script>
+<!--{/if}-->
+
+<!--{eval userappprompt();}-->
+<!--{if $_G['basescript'] != 'userapp'}-->
+<div id="scrolltop">
+	<!--{if $_G[fid] && $_G['mod'] == 'viewthread'}-->
+	<span><a href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&extra=$_GET[extra]&page=$page{if $_GET[from]}&from=$_GET[from]{/if}" onclick="showWindow('reply', this.href)" class="replyfast" title="{lang fastreply}"><b>{lang fastreply}</b></a></span>
+	<!--{/if}-->
+	<span hidefocus="true"><a title="{lang scrolltop}" onclick="window.scrollTo('0','0')" class="scrolltopa" ><b>{lang scrolltop}</b></a></span>
+	<!--{if $_G[fid]}-->
+	<span>
+		<!--{if $_G['mod'] == 'viewthread'}-->
+		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]" hidefocus="true" class="returnlist" title="{lang return_list}"><b>{lang return_list}</b></a>
+		<!--{else}-->
+		<a href="forum.php" hidefocus="true" class="returnboard" title="{lang return_forum}"><b>{lang return_forum}</b></a>
+		<!--{/if}-->
+	</span>
+	<!--{/if}-->
+</div></div>
+
+<script type="text/javascript">_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script>
+<!--{/if}-->
+<!--{if isset($_G['makehtml'])}-->
+	<script type="text/javascript" src="{$_G[setting][jspath]}html2dynamic.js?{VERHASH}"></script>
+	<script type="text/javascript">
+		var html_lostmodify = {TIMESTAMP};
+		htmlGetUserStatus();
+		<!--{if isset($_G['htmlcheckupdate'])}-->
+		htmlCheckUpdate();
+		<!--{/if}-->
+	</script>
+<!--{/if}-->
+<!--{eval output();}-->
+<div id="cony_ft">
+<div class="ftmain">
+<div class="name">
+<h4>&#x56E2;&#x961F;</h4>
+<p><a>&#x4FA7;&#x8033;&#x503E;&#x542C;</a></p>
+</div>
+<div class="kf">
+ <h4>&#x5B98;&#x65B9;&#x5BA2;&#x670D;</h4>
+<p><a href="#" target="_blank">&#x6276;&#x6447;-Q:1980774506</a></p>
+</div>
+<div class="qq-qun">
+<h4>&#x5B98;&#x65B9;QQ&#x7FA4;</h4>
+<p>652692981(&#x7AD9;&#x957F;&#x4E92;&#x52A9;&#x7FA4;)</p>
+</div>
+<div class="chat">
+<h4 style="ont-size: 14px;margin-bottom: 10px;font-weight: bold;">&#x626B;&#x4E00;&#x626B;&#x5FEB;&#x901F;&#x52A0;&#x5165;</h4>
+<p><img width="100" height="100" src="template/rabbit_office/image/wchat.png" alt="&#x7FA4;&#x53F7;652692981"></p>
+                </div>
+<div class="copyright">&copy; 2001-2003 <a href="http://www.comsenz.com" target="_blank">Comsenz Inc.</a> Powered by <a href="http://www.discuz.net" target="_blank">Discuz!$_G['setting']['version'].</a><!--{if $_G['setting']['icp']}-->( <a href="http://www.miitbeian.gov.cn/" target="_blank">$_G['setting']['icp']</a> )<!--{/if}--></div>
+<!--{hook/global_footerlink}-->
+</div>
+</div>
+</div>
+</body>
+</html>

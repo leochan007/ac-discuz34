@@ -1,0 +1,102 @@
+<!--{template common/header}-->
+<!--顶部导航-->
+
+<link rel="stylesheet" href="template/u179_u179waplt/touch/JS/mobile/JSNV/ui-base.css">
+<link rel="stylesheet" href="template/u179_u179waplt/touch/JS/mobile/JSNV/ui-dis.css">
+<link rel="stylesheet" href="template/u179_u179waplt/touch/JS/mobile/JSNV/style.css">
+
+
+
+	<div data-role="header" class="dis_nav_bar">
+		<div class="ui-navbar">
+			<ul class="ui-grid-c" style="width: 96%; left: 2%; padding: .3em 0 .4em;">
+				<li class="ui-block-a ">
+					<label class="ui-btn ui-btn-corner-all dis_nav_select dis_btn_left" ontouchstart="zy_touch(&#39;&#39;, function(){mymenus2(1);});" onmousedown="zy_touch(&#39;&#39;, function(){mymenus2(1);});">
+						<span class="ui-btn-inner">
+							<span class="ui-btn-text ui-big"><a href="home.php?mod=space&do=blog&view=all" style="color:#FFF;">随便看看</a></span>
+						</span>
+					</label>
+				</li>
+				<li class="ui-block-b">
+					<label class="ui-btn ui-btn-corner-all dis_nav_select dis_btn_center" ontouchstart="zy_touch(&#39;&#39;, function(){mymenus2(2);});" onmousedown="zy_touch(&#39;&#39;, function(){mymenus2(2);});">
+						<span class="ui-btn-inner">
+							<span class="ui-btn-text ui-big"><a href="home.php?mod=space&do=blog&view=we" style="color:#FFF;">好友日志</a></span>
+						</span>
+					</label>
+				</li>
+				<li class="ui-block-c">
+					<label class="ui-btn ui-btn-corner-all dis_nav_select dis_btn_center" ontouchstart="zy_touch(&#39;&#39;, function(){mymenus2(3);});" onmousedown="zy_touch(&#39;&#39;, function(){mymenus2(3);});">
+						<span class="ui-btn-inner">
+							<span class="ui-btn-text ui-big"><a href="home.php?mod=space&do=blog&view=me" style="color:#FFF;">我的日志</a></span>
+						</span>
+					</label>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+<!--顶部导航-->
+
+<div class="ct">
+
+
+			<!--{if $searchkey}-->
+				<p class="tbmu">{lang follow_search_blog} <span style="color: red; font-weight: 700;">$searchkey</span> {lang doing_record_list}</p>
+			<!--{/if}-->
+
+		<!--{if $count}-->
+			<div id="alist" class="blog">
+            <ul>            
+			<!--{loop $list $k $value}-->
+				<li class="brtb">
+					<!--{if empty($diymode)}-->
+						<div class="blog_avt"><a href="home.php?mod=space&uid=$value[uid]&do=profile&from=space&mobile=2" c="1"><!--{avatar($value[uid],small)}--></a></div>				
+					<!--{/if}-->
+					<h1 class="mbn">
+						<a href="home.php?mod=space&uid=$value[uid]&do=blog&id=$value[blogid]" class="xi2">$value[subject]</a>						
+					</h1>                    
+					<p class="mbm">
+						<!--{if empty($diymode)}--><a href="home.php?mod=space&uid=$value[uid]&do=profile&from=space&mobile=2">$value[username]</a> <!--{/if}--> <span class="xg1">$value[dateline]</span>
+					</p>
+					<div class="message mbm"{if $value[pic]} style="min-height:80px;"{/if} id="blog_article_$value[blogid]">
+						<!--{if $value[pic]}--><div class="y"><a href="home.php?mod=space&uid=$value[uid]&do=blog&id=$value[blogid]" target="_blank"><img src="$value[pic]" alt="$value[subject]" class="tn" /></a></div><!--{/if}-->
+						$value[message]
+					</div>
+					<p class="xg1">
+						<!--{if $value[viewnum]}-->$value[viewnum] {lang blog_read}
+                        <span class="pipe">|</span>
+                        <!--{/if}-->						
+                        $value[replynum] {lang blog_replay}
+                        <!--{if $value['hot']}--> <span class="pipe">|</span> {lang hot} $value[hot]<!--{/if}-->						
+						<!--{if $_GET['view']=='me' && $space['self']}-->
+							<span class="pipe">|</span>
+                            <a href="home.php?mod=spacecp&ac=blog&blogid=$value[blogid]&op=delete&handlekey=delbloghk_{$value[blogid]}" >{lang delete}</a>
+						<!--{/if}-->						
+					</p>
+				</li>
+			<!--{/loop}-->
+            </ul>
+			</div>
+            
+            
+<!--{if $wappages == 1}--> 
+<!--{if $count > $perpage}-->
+
+<!--{/if}-->
+<!--{else}-->
+<!--{if $multi}--><div class="pgbox">$multi</div><!--{/if}-->
+<!--{/if}-->          
+
+		<!--{else}-->
+			<div class="wmt brtb">{lang no_related_blog}</div>
+		<!--{/if}-->
+
+<script type="text/javascript">
+	function fuidgoto(fuid) {
+		var parameter = fuid != '' ? '&fuid='+fuid : '';
+		window.location.href = 'home.php?mod=space&do=blog&view=we'+parameter;
+	}
+</script>
+</div>
+<!--{template common/footer}-->

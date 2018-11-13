@@ -1,0 +1,47 @@
+<style>
+						.u179_appflxx img{width:100%;margin-top:7px;margin-bottom:2px;border-radius:4px}
+						.u179_appflxx .appflxxtable{width:100%}
+						.u179_appflxx .appflxxtable td{padding:7px 10px;text-align:left;border:1px solid #efefef}
+						.u179_appflxx .appflxxtable th{padding:7px 10px;width:90px;text-align:right;background:#f8f8f8;border:1px solid #efefef}
+						.u179_appflxx .applylist{font-size:14px;border-radius:3px;margin:10px 0;padding-bottom:6px;background:#fffdef;border:1px dashed #e7e1cd}
+						.u179_appflxx .applylist h1{height:36px;line-height:38px;font-weight:300;margin:0 10px;border-bottom:1px solid #fbdbb2;color:#f90}
+						.u179_appflxx .applylist table{width:100%}
+						.u179_appflxx .applylist table .small{width:25px}
+						.u179_appflxx .applylistverified{font-size:14px;border-radius:3px;margin:10px 0;padding-bottom:6px;background:#f8f8f8;border:1px solid #efefef}
+						.u179_appflxx .applylistverified h1{height:36px;line-height:38px;font-weight:300;margin:0 10px;border-bottom:1px solid #dfdfdf;color:#777}
+
+						</style>
+                        	<!--{if $threadsortshow['optionlist'] && !($post['status'] & 1) && !$_G['forum_threadpay']}-->
+                                <!--{if $threadsortshow['optionlist'] == 'expire'}-->
+                                    {lang has_expired}
+                                <!--{else}-->
+								
+                                    <div class="u179_appflxx">
+									<table cellspacing="0" cellpadding="0" class="appflxxtable">
+									<tbody>
+                                    <!--{loop $threadsortshow['optionlist'] $option}-->
+                                        <!--{if $option['type'] != 'info'}-->
+										<tr>
+											<th>$option[title]: </th>
+											<td>
+												<!--{if $option['value']}-->
+													<!--{if $option['type'] == "image"}-->
+													<!--{eval preg_match("/(".str_replace("/",'\/',$_G['setting']['attachurl']).")(.*?)((.gif)|(.jpg)|(.jpeg)|(.bmp)|(.png))/",strtolower($option['value']),$u179_match);}-->
+													<img src='$u179_match[0]' />
+													<!--{else}-->
+													$option[value] $option[unit]
+													<!--{/if}-->
+												<!--{else}-->
+												<span class="grey">--</span>
+												<!--{/if}-->
+											</td>
+										</tr>
+                                            
+                                        <!--{/if}-->
+                                    <!--{/loop}-->
+									</tbody>
+									</table>
+									</div>
+								
+                                <!--{/if}-->
+                            <!--{/if}-->

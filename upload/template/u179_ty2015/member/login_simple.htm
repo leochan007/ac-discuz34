@@ -1,0 +1,10 @@
+<!--{if CURMODULE != 'logging'}-->
+	<script type="text/javascript" src="{$_G[setting][jspath]}logging.js?{VERHASH}"></script>
+<a href="member.php?mod=logging&action=login&referer={echo rawurlencode($dreferer)}" onclick="showWindow('login', this.href);return false;" class="xi2">登陸</a><span class="pipe">|</span>
+<a href="member.php?mod={$_G[setting][regname]}">$_G['setting']['reglinkname']</a><span class="pipe">|</span>
+<a href="javascript:;" onclick="showWindow('login', 'member.php?mod=logging&action=login&viewlostpw=1')">{lang forgotpw}</a>
+	<!--{if $_G['setting']['pwdsafety']}-->
+		<script type="text/javascript" src="{$_G['setting']['jspath']}md5.js?{VERHASH}" reload="1"></script>
+	<!--{/if}-->
+
+<!--{/if}-->

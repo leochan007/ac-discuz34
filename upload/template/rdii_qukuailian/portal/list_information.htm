@@ -1,0 +1,98 @@
+<!--{template common/header}-->
+<!--[name]荣点网络-资讯列表页[/name]-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+<div id="pt" class="bm cl">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+		<a href="$_G[setting][navs][1][filename]">{lang portal}</a> <em>&rsaquo;</em>
+		<!--{loop $cat[ups] $value}--> <a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a><em>&rsaquo;</em><!--{/loop}-->
+		$cat[catname]
+	</div>
+</div>
+
+<!--{ad/text/wp a_t}-->
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="ct" class="ct2 wp rdii_list cl">
+	<div class="mn">
+		<!--{ad/articlelist/mbm hm/1}--><!--{ad/articlelist/mbm hm/2}-->
+		<!--[diy=listcontenttop]--><div id="listcontenttop" class="area"></div><!--[/diy]-->
+		<div class="bm">
+			<div class="bm_h rdii_list_tit cl">
+				<!--{if $_G[setting][rssstatus] && !$_GET['archiveid']}--><a href="portal.php?mod=rss&catid=$cat[catid]" class="y xi2 rss" target="_blank" title="RSS">{lang rss_subscribe_this}</a><!--{/if}-->
+				<!--{if ($_G['group']['allowpostarticle'] || $_G['group']['allowmanagearticle'] || $categoryperm[$catid]['allowmanage'] || $categoryperm[$catid]['allowpublish']) && empty($cat['disallowpublish'])}-->
+				<a href="portal.php?mod=portalcp&ac=article&catid=$cat[catid]" class="y xi2 addnew">{lang article_publish}</a>
+				<!--{/if}-->
+				<h1>$cat[catname]</h1>
+			</div>
+			<!--{if $cat[subs]}-->
+			<div class="bm_c bbda">
+				{lang sub_category}:&nbsp;&nbsp;
+				<!--{eval $i = 1;}-->
+				<!--{loop $cat[subs] $value}-->
+				<!--{if $i != 1}--><span class="pipe">|</span><!--{/if}--><a href="{$portalcategory[$value['catid']]['caturl']}" class="xi2">$value[catname]</a><!--{eval $i--;}-->
+				<!--{/loop}-->
+			</div>
+			<!--{/if}-->
+			<div class="rdii_list_article rdii_mb15">
+			<!--{loop $list['list'] $value}-->
+				<!--{eval $highlight = article_title_style($value);}-->
+				<!--{eval $article_url = fetch_article_url($value);}-->
+				<ul>
+					<!--{if $value[pic]}-->
+					<li class="pic"><a href="$article_url"><img src="$value[pic]" alt="$value[title]"></a></li>
+					<!--{/if}-->
+					<h3 class="tit"><a href="$article_url" title="$value[title]" target="_blank">$value[title]</a></h3>
+					<li class="summary">$value[summary]</li>
+					<li class="date">
+					    <!--{if $value[catname] && $cat[subs]}-->{lang category}:
+						<label><a href="{$portalcategory[$value['catid']]['caturl']}" class="xi2">$value[catname]</a></label>&nbsp;&nbsp;
+						<!--{/if}-->
+					    <span>$value[dateline]</span>&nbsp;&nbsp;
+					    <!--{if $_G['group']['allowmanagearticle'] || ($_G['group']['allowpostarticle'] && $value['uid'] == $_G['uid'] && (empty($_G['group']['allowpostarticlemod']) || $_G['group']['allowpostarticlemod'] && $value['status'] == 1)) || $categoryperm[$value['catid']]['allowmanage']}-->
+						<span class="xg1">
+							<label><a href="portal.php?mod=portalcp&ac=article&op=edit&aid=$value[aid]">{lang edit}</a></label>
+							<span class="pipe">|</span>
+							<label><a href="portal.php?mod=portalcp&ac=article&op=delete&aid=$value[aid]" id="article_delete_$value[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang delete}</a></label>
+						</span>
+						<!--{/if}-->
+					</li>
+				</ul>
+			<!--{/loop}-->
+			<!--{if $list['multi']}--><div class="pgs cl">{$list['multi']}</div><!--{/if}-->
+			</div>
+			<!--[diy=listloopbottom]--><div id="listloopbottom" class="area"></div><!--[/diy]-->
+		</div>
+		<!--{ad/articlelist/mbm hm/3}--><!--{ad/articlelist/mbm hm/4}-->
+	
+		<!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"></div><!--[/diy]-->
+
+	</div>
+	<div class="sd pph">
+
+		<div class="drag">
+			<!--[diy=diyrighttop]--><div id="diyrighttop" class="area"></div><!--[/diy]-->
+		</div>
+		<div class="rdii_list_sd_information rdii_mb15">
+		    <!--[diy=rdii_list_sd_heats]--><div id="rdii_list_sd_heats" class="area"></div><!--[/diy]-->
+		</div>
+        <div class="rdii_list_sd_information rdii_mb15">
+		    <!--[diy=rdii_list_sd_lastpost]--><div id="rdii_list_sd_lastpost" class="area"></div><!--[/diy]-->
+		</div>
+		<div class="drag">
+			<!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
+		</div>
+
+	</div>
+</div>
+
+<div class="wp mtn">
+	<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+
+<!--{template common/footer}-->

@@ -1,0 +1,81 @@
+<!--{template common/header}-->
+<!--顶部导航-->
+
+<link rel="stylesheet" href="template/u179_u179waplt/touch/JS/mobile/JSNV/ui-base.css">
+<link rel="stylesheet" href="template/u179_u179waplt/touch/JS/mobile/JSNV/ui-dis.css">
+<link rel="stylesheet" href="template/u179_u179waplt/touch/JS/mobile/JSNV/style.css">
+
+
+
+	<div data-role="header" class="dis_nav_bar">
+		<div class="ui-navbar">
+			<ul class="ui-grid-c" style="width: 96%; left: 2%; padding: .3em 0 .4em;">
+				<li class="ui-block-a ">
+					<label class="ui-btn ui-btn-corner-all dis_nav_select dis_btn_left" ontouchstart="zy_touch(&#39;&#39;, function(){mymenus2(1);});" onmousedown="zy_touch(&#39;&#39;, function(){mymenus2(1);});">
+						<span class="ui-btn-inner">
+							<span class="ui-btn-text ui-big"><a href="forum.php?forumlist=1&mobile=2" style="color:#FFF;">返回首页</a></span>
+						</span>
+					</label>
+				</li>
+				<li class="ui-block-b">
+					<label class="ui-btn ui-btn-corner-all dis_nav_select dis_btn_center" ontouchstart="zy_touch(&#39;&#39;, function(){mymenus2(2);});" onmousedown="zy_touch(&#39;&#39;, function(){mymenus2(2);});">
+						<span class="ui-btn-inner">
+							<span class="ui-btn-text ui-big"><a href="group.php?mod=my&view=join&mobile=2" style="color:#FFF;">参与的群</a></span>
+						</span>
+					</label>
+				</li>
+				<li class="ui-block-c">
+					<label class="ui-btn ui-btn-corner-all dis_nav_select dis_btn_center" ontouchstart="zy_touch(&#39;&#39;, function(){mymenus2(3);});" onmousedown="zy_touch(&#39;&#39;, function(){mymenus2(3);});">
+						<span class="ui-btn-inner">
+							<span class="ui-btn-text ui-big"><a href="group.php?mod=my&view=manager&mobile=2" style="color:#FFF;">管理的群</a></span>
+						</span>
+					</label>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+<!--顶部导航-->
+
+<!--group start-->
+<div class="wp">
+		<div id="u179_group">                 
+            	<div id="u179_clear"></div>
+                <!--{template group/u179_group_box}-->
+                </div>
+
+
+			<div id="u179_group_index_list">
+            	<div id="u179_group_title_line"></div>
+            	<div id="u179_group_title" style="width:68px;">{lang group_categories}</div>
+					
+                    <!--{loop $first $groupid $group}-->
+
+                    <div id="u179_group_index_list_cat">
+                        <div id="u179_group_index_list_cat_bar">
+
+                            <div id="u179_group_index_list_cat_name" style="width:1000px;" style="float:left;">$group[name]
+<!--{if $group[groupnum]}--><span>（$group[groupnum]）</span><!--{else}--><span>（0）</span><!--{/if}-->
+</div>
+
+                            <div id="u179_clear"></div>
+                        </div>
+                        <div id="u179_clear"></div>
+                    
+                    	<div>
+						<!--{loop $group['secondlist'] $fid}-->
+                            <div id="u179_group_index_list_fid">
+                            	<a href="group.php?sgid=$fid"><div id="u179_group_index_list_fid_name">$second[$fid][name]</div></a>
+                            </div>
+						<!--{/loop}-->
+                        	<div id="u179_group_index_list_fid">
+                            	<a href="group.php?gid=$groupid"><div id="u179_group_index_list_fid_name">{lang more}</div></a>
+                            </div>
+                    	<div id="u179_clear"></div>
+                    	</div>
+					</div>
+                    <!--{/loop}-->
+			</div>
+
+</div>

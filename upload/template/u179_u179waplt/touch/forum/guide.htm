@@ -1,0 +1,85 @@
+<!--{template common/header}-->
+<!-- header start -->
+<header class="header">
+	<div class="hdc cl">
+		<!--{if $_G['setting']['domain']['app']['mobile']}-->
+			{eval $nav = 'http://'.$_G['setting']['domain']['app']['mobile'];}
+		<!--{else}-->
+			{eval $nav = "forum.php";}
+		<!--{/if}-->
+		<h2><a title="$_G[setting][bbname]" href="$nav"><img src="template/u179_u179waplt/touch/image/mobile/images/logo.png" /></a></h2>
+		<ul class="user_fun">
+			<li><a href="search.php?mod=forum" class="icon_search">{lang search}</a></li>
+			<li><a href="forum.php?forumlist=1" class="icon_threadlist">{lang forum_list}</a></li>
+			<li><a href="<!--{if $_G[uid]}-->home.php?mod=space&uid=$_G[uid]&do=profile&mycenter=1<!--{else}-->member.php?mod=logging&action=login<!--{/if}-->" class="icon_userinfo">{lang user_info}</a><!--{if $_G[member][newpm]}--><span class="icon_msg"></span><!--{/if}--></li>
+			<!--{if $_G['setting']['mobile']['mobilehotthread']}-->
+			<li class="on" id="usermsg"><a href="forum.php?mod=guide&view=hot" class="icon_hotthread">{lang hot_thread}</a></li>
+			<!--{/if}-->
+		</ul>
+	</div>
+</header>
+<!-- header end -->
+<link rel="stylesheet" href="template/u179_u179waplt/css/index.css" type="text/css" media="all">
+<link rel="stylesheet" href="template/u179_u179waplt/css/forumdisplay.css" type="text/css" media="all">
+<link rel="stylesheet" href="template/u179_u179waplt/css/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" href="template/u179_u179waplt/css/style.css" type="text/css" media="all">
+<script src="template/u179_u179waplt/js/TouchSlide.1.1.js"></script>
+
+
+<style>
+.focus{width:100%;height:180px;margin:0 auto;position:relative;overflow:hidden}
+.focus .hd{width:100%;height:11px;position:absolute;z-index:1;bottom:5px;text-align:center}
+.focus .hd ul{display:inline-block;height:5px;padding:3px 5px;background-color:rgba(255,255,255,.7);-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;font-size:0;vertical-align:top}
+.focus .hd ul li{display:inline-block;width:5px;height:5px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;background:#8C8C8C;margin:0 5px;vertical-align:top;overflow:hidden}
+.focus .hd ul .on{background:#FE6C9C}
+.focus .bd{position:relative;z-index:0}
+.focus .bd li img{width:100%;height:180px;background:url(template/u179_u179waplt/imags/loading.gif) center center no-repeat}
+.focus .bd li a{-webkit-tap-highlight-color:transparent}
+.tuijians {z-index: 100;width: 100%;background-color: #fff;}
+body{background-color: #f2f2f2;}
+.daohang{background-color: #ffffff;}
+</style>
+
+<script type = "text/javascript" >
+ TouchSlide({
+	slideCell: "#focus",
+	titCell: ".hd ul",
+	mainCell: ".bd ul",
+	effect: "left",
+	autoPlay: true,
+	autoPage: true,
+	switchLoad: "_src"
+});
+</script>
+
+<br><br>
+<a href="#"><img src="template/u179_u179waplt/img/images/adsu179bbs.jpg" width="100%" style="vertical-align: top;height:200px;"></a>
+<!-- header start -->
+<ul class="nav2 tuijians" style="border-bottom:1px solid #E6E6E6;">
+<li {if $_GET['view'] == 'newthread'}class="current" {/if}style="width: 25%;">
+<a href="forum.php?mod=guide&amp;view=newthread">最新发表</a></li>
+<li {if $_GET['view'] == 'hot'}class="current" {/if} style="width: 25%;">
+<a href="forum.php?mod=guide&amp;view=hot">最新热门</a></li>
+<li {if $_GET['view'] == 'digest'}class="current" {/if} style="width: 25%;">
+<a href="forum.php?mod=guide&amp;view=digest">最新精华</a></li>
+<li {if $_GET['view'] == 'new'}class="current" {/if} style="width: 25%;">
+<a href="forum.php?mod=guide&amp;view=new">最新回复</a></li>
+</ul>
+<!-- header end -->
+
+
+
+<!-- main threadlist start -->
+<div class="page-recover">
+<ul id="recommend-hot-list" class="recommend-hot-list"> 
+	<!--{loop $data $key $list}-->
+		<!--{subtemplate forum/guide_list_row}-->
+	<!--{/loop}-->
+</ul> 
+</div>
+<!-- main threadlist end -->
+{if !$_GET[ajax]}
+<center>$multipage</center>
+{/if}
+<div class="pullrefresh" style="display:none;"></div>
+<!--{template common/footer}-->

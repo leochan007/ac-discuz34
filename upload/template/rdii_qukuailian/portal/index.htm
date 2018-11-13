@@ -1,0 +1,104 @@
+<!--{template common/header}-->
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div class="rdii_portal_box1">
+	<div id="rdii_portal_slide" class="rdii_portal_slide">
+	    <div class="hd">
+	        <!--[diy=rdii_index_silde]--><div id="rdii_index_silde" class="area"></div><!--[/diy]-->
+		</div>
+		<div class="bd">
+		    <!--[diy=rdii_index_silde2]--><div id="rdii_index_silde2" class="area"></div><!--[/diy]-->
+		</div>
+	</div>
+	<script type="text/javascript">
+	jQuery("#rdii_portal_slide").slide({ mainCell:".bd ul",effect:"top",autoPlay:true,triggerTime:0,interTime:5000});
+	</script>
+	<div class="rdii_portal_alerts">
+	    <!--[diy=rdii_index_alerts]--><div id="rdii_index_alerts" class="area"></div><!--[/diy]-->
+	</div>
+	<div class="rdii_portal_headlines">
+	    <!--[diy=rdii_index_headlines_tit]--><div id="rdii_index_headlines_tit" class="area"></div><!--[/diy]-->
+	</div>
+</div>
+<div class="rdii_cl"></div>
+<div class="rdii_portal_box2">
+    <div class="rdii_portal_news">
+	    <!--[diy=rdii_index_news]--><div id="rdii_index_news" class="area"></div><!--[/diy]-->
+	</div>
+	<div class="rdii_portal_activity">
+	    <!--[diy=rdii_index_activity]--><div id="rdii_index_activity" class="area"></div><!--[/diy]-->
+	</div>
+	<div class="rdii_portal_market">
+	    <!--[diy=rdii_index_market]--><div id="rdii_index_market" class="area"></div><!--[/diy]-->	
+	</div>
+</div>
+<div class="rdii_portal_box2">
+    <div class="rdii_portal_news">
+	    <!--[diy=rdii_index_blockchain]--><div id="rdii_index_blockchain" class="area"></div><!--[/diy]-->
+	</div>
+	<div class="rdii_portal_activity">
+	    <!--[diy=rdii_index_technology]--><div id="rdii_index_technology" class="area"></div><!--[/diy]-->		
+	</div>
+	<div class="rdii_portal_market">
+	    <!--[diy=rdii_index_project]--><div id="rdii_index_project" class="area"></div><!--[/diy]-->	
+	</div>
+</div>
+<div class="rdii_portal_box3">
+	<div class="rdii_portal_recommended">
+		<div class="hd">
+			<ul>
+				<li>社区推荐</li>
+				<li>最新发布</li>
+				<li>最新回复</li>
+				<li>热门主题</li>
+				<li class="lastli">精华主题</li>
+			</ul>
+		</div>
+		<div class="bd">
+			<ul> 
+			    <!--[diy=rdii_index_recommended]--><div id="rdii_index_recommended" class="area"></div><!--[/diy]-->
+		    </ul>
+			<ul>
+			    <!--[diy=rdii_index_lastpost]--><div id="rdii_index_lastpost" class="area"></div><!--[/diy]-->
+			</ul>
+			<ul>
+			    <!--[diy=rdii_index_replies]--><div id="rdii_index_replies" class="area"></div><!--[/diy]-->
+			</ul>
+			<ul>
+			    <!--[diy=rdii_index_heat]--><div id="rdii_index_heat" class="area"></div><!--[/diy]-->
+			</ul>
+			<ul>
+			    <!--[diy=rdii_index_digest]--><div id="rdii_index_digest" class="area"></div><!--[/diy]-->
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">jQuery(".rdii_portal_recommended").slide();</script>
+	<div class="rdii_portal_popular_answers">
+	    <!--[diy=rdii_index_answer]--><div id="rdii_index_answer" class="area"></div><!--[/diy]-->
+	</div>
+	<div class="rdii_portal_talent">
+	    <!--[diy=rdii_index_user]--><div id="rdii_index_user" class="area"></div><!--[/diy]-->
+	</div>
+</div>
+<div class="rdii_portal_box4">
+	<div class="rdii_portal_latestnews">
+	    <!--[diy=rdii_index_lastnews]--><div id="rdii_index_lastnews" class="area"></div><!--[/diy]-->
+	</div>
+
+	<div class="rdii_portal_weibo">
+		<ul>
+			<!--[diy=rdii_index_weibo]--><div id="rdii_index_weibo" class="area"></div><!--[/diy]-->
+		</ul>	
+	</div>
+	<div class="rdii_portal_gg">
+		<ul>
+			<!--[diy=rdii_portal_gg]--><div id="rdii_portal_gg" class="area"></div><!--[/diy]-->
+		</ul>	
+	</div>
+</div>
+<div class="rdii_cl"></div>
+<script src="misc.php?mod=diyhelp&action=get&type=index&diy=yes&r={echo random(4)}" type="text/javascript"></script>
+<!--{template common/footer}-->
